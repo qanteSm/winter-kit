@@ -87,7 +87,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/user/winterkit"
+        "url": "https://github.com/qanteSm/winter-kit"
     },
     "engines": {
         "node": ">=18.0.0"

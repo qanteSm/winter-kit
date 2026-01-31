@@ -174,4 +174,4 @@ Pull requests are welcome! For major changes, please open an issue first.
 
 ## License
 
-MIT © [Muhammet Ali Büyük](https://github.com/user)
+MIT © [qanteSm](https://github.com/qanteSm)
