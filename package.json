@@ -1,0 +1,92 @@
+{
+  "name": "winterkit",
+  "version": "0.1.0",
+  "description": "Modern utility library for Edge/Serverless. WinterCG compliant, zero Node.js deps.",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./array": {
+      "types": "./dist/array/index.d.ts",
+      "import": "./dist/array/index.js"
+    },
+    "./object": {
+      "types": "./dist/object/index.d.ts",
+      "import": "./dist/object/index.js"
+    },
+    "./string": {
+      "types": "./dist/string/index.d.ts",
+      "import": "./dist/string/index.js"
+    },
+    "./stream": {
+      "types": "./dist/stream/index.d.ts",
+      "import": "./dist/stream/index.js"
+    },
+    "./fetch": {
+      "types": "./dist/fetch/index.d.ts",
+      "import": "./dist/fetch/index.js"
+    },
+    "./events": {
+      "types": "./dist/events/index.d.ts",
+      "import": "./dist/events/index.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "array": ["./dist/array/index.d.ts"],
+      "object": ["./dist/object/index.d.ts"],
+      "string": ["./dist/string/index.d.ts"],
+      "stream": ["./dist/stream/index.d.ts"],
+      "fetch": ["./dist/fetch/index.d.ts"],
+      "events": ["./dist/events/index.d.ts"]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --ext .ts",
+    "prepublishOnly": "pnpm build"
+  },
+  "keywords": [
+    "utility",
+    "utils",
+    "edge",
+    "serverless",
+    "cloudflare",
+    "workers",
+    "wintercg",
+    "streams",
+    "typescript"
+  ],
+  "author": "Muhammet Ali Büyük",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/user/winterkit"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.0",
+    "eslint": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^6.18.0",
+    "@typescript-eslint/parser": "^6.18.0"
+  }
+}
