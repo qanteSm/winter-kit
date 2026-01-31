@@ -1,6 +1,6 @@
 <div align="center">
 
-# ❄️ WinterKit
+# ❄️ wintkit
 
 **Modern utility library for Edge & Serverless**
 
@@ -10,21 +10,21 @@
 ![license](https://img.shields.io/badge/license-MIT-brightgreen)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue)
 
-[Features](#features) • [Install](#install) • [Modules](#modules) • [Why WinterKit?](#why-winterkit)
+[Features](#features) • [Install](#install) • [Modules](#modules) • [Why wintkit?](#why-wintkit)
 
 </div>
 
 ---
 
-## Why WinterKit?
+## Why wintkit?
 
 > **Lodash is great, but it wasn't built for Edge.**
-> WinterKit is zero-dependency, tree-shakable, and runs anywhere — Cloudflare Workers, Vercel Edge, Deno, Bun.
+> wintkit is zero-dependency, tree-shakable, and runs anywhere — Cloudflare Workers, Vercel Edge, Deno, Bun.
 
 ```typescript
 // Import only what you need. Nothing else touches your bundle.
-import { chunk } from 'winterkit/array'
-import { retryFetch } from 'winterkit/fetch'
+import { chunk } from 'wintkit/array'
+import { retryFetch } from 'wintkit/fetch'
 ```
 
 ---
@@ -46,19 +46,19 @@ import { retryFetch } from 'winterkit/fetch'
 
 ```bash
 # npm
-npm install winterkit
+npm install wintkit
 
 # pnpm
-pnpm add winterkit
+pnpm add wintkit
 
 # bun
-bun add winterkit
+bun add wintkit
 
 # deno (jsr)
-deno add @winterkit/core
+deno add @wintkit/core
 
 # jsr universal
-npx jsr add @winterkit/core
+npx jsr add @wintkit/core
 ```
 
 ---
@@ -68,7 +68,7 @@ npx jsr add @winterkit/core
 ### 📚 Array
 
 ```typescript
-import { chunk, groupBy, unique, partition, shuffle } from 'winterkit/array'
+import { chunk, groupBy, unique, partition, shuffle } from 'wintkit/array'
 
 chunk([1, 2, 3, 4, 5], 2)        // [[1,2], [3,4], [5]]
 groupBy(users, u => u.role)      // { admin: [...], user: [...] }
@@ -79,7 +79,7 @@ partition(nums, n => n > 0)      // [[positives], [negatives]]
 ### 🔧 Object
 
 ```typescript
-import { deepMerge, get, set, pick, omit } from 'winterkit/object'
+import { deepMerge, get, set, pick, omit } from 'wintkit/object'
 
 deepMerge({ a: { b: 1 } }, { a: { c: 2 } })  // { a: { b: 1, c: 2 } }
 get(obj, 'user.profile.name', 'default')
@@ -89,7 +89,7 @@ set(obj, 'settings.theme', 'dark')           // immutable, returns new obj
 ### ✂️ String
 
 ```typescript
-import { slugify, truncate, template, escapeHtml } from 'winterkit/string'
+import { slugify, truncate, template, escapeHtml } from 'wintkit/string'
 
 slugify('Merhaba Dünya')                      // 'merhaba-dunya'
 truncate('long text', { length: 8 })          // 'long...'
@@ -99,7 +99,7 @@ template('Hello {{name}}', { name: 'World' }) // 'Hello World'
 ### 🌊 Stream
 
 ```typescript
-import { streamMap, toAsyncIterable, jsonToStream } from 'winterkit/stream'
+import { streamMap, toAsyncIterable, jsonToStream } from 'wintkit/stream'
 
 // Transform stream chunks
 const doubled = streamMap(stream, n => n * 2)
@@ -116,7 +116,7 @@ return new Response(jsonToStream({ data }))
 ### 🔁 Fetch
 
 ```typescript
-import { retryFetch, fetchTimeout, QueryBuilder } from 'winterkit/fetch'
+import { retryFetch, fetchTimeout, QueryBuilder } from 'wintkit/fetch'
 
 // Retry with exponential backoff
 await retryFetch('/api/data', { maxRetries: 3 })
@@ -131,7 +131,7 @@ new QueryBuilder().set('page', 1).set('limit', 20).toURL('/api')
 ### 📡 Events
 
 ```typescript
-import { winterEvents } from 'winterkit/events'
+import { winterEvents } from 'wintkit/events'
 
 // Global typed event bus
 winterEvents.on('fetch:retry', ({ url, attempt }) => {
@@ -159,9 +159,9 @@ winterEvents.on('fetch:retry', ({ url, attempt }) => {
 Each function is in its own file — import one, ship one.
 
 ```
-winterkit/array   ~800B gzipped
-winterkit/stream  ~1.2KB gzipped
-winterkit/fetch   ~1.5KB gzipped
+wintkit/array   ~800B gzipped
+wintkit/stream  ~1.2KB gzipped
+wintkit/fetch   ~1.5KB gzipped
 ```
 
 ---
